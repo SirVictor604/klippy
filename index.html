@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+
+<!-- ##############################################################
+     EDIT SECTION  (everything you need to change is right here)
+     Only change the words inside the "quotes". Save the file. Done.
+     Anything you type in your Google Sheet "Settings" tab will
+     override what is written here.
+     ############################################################## -->
+<script>
+const SHEET_ID = "1T14rgMkuMP4SGGhU3UkYLLHy0r3l8C9eLPamW4O1fs0";   /* your Google Sheet ID (optional, only for editing from the Sheet) */
+
+const D = {
+
+  /* 1. WHERE SHOULD VISITORS GO?  Paste your redirect link here */
+  redirect_link: "https://youtu.be/aHzhBJwSJSU?si=kojGQo4kPEsfsOxr",
+  redirect_name: "HOW TO CREATE 100 AI VIDEOS FOR FREE EVERYDAY USING THIS SECRET WEBSITE",            /* optional nice name for the headline, e.g. "Perfume Queen" */
+
+  /* 2. COUNTDOWN (seconds) */
+  countdown_seconds: "13",
+
+  /* 3. YOUR WHATSAPP for the "Advertise here" boxes. Just type your number. */
+  whatsapp_number:  "09065147362",
+  whatsapp_message: "Hi, I saw the Advertise here for as low as ₦500 space on your link page. I want to advertise, please send me the details.",
+  country_code:     "234",      /* 234 = Nigeria. Used when your number starts with 0 */
+
+  /* 4. HOW MANY AD BOXES (top and bottom). Put 0 for top to hide it */
+  header_ad_slots: "3",
+  footer_ad_slots: "4",
+  advertise_text:  "Advertise here for as low as ₦500",
+
+  /* 5. THE WORDS ON THE PAGE.
+        The real website name is NEVER shown to visitors.
+        {destination} only shows a name if you set one (redirect_name above, or column C in your Sheet).
+        Otherwise it says "what you came for". {seconds} = the countdown number. */
+  brand_name:   "HOW TO CREATE 100 AI VIDEOS FOR FREE EVERYDAY USING THIS SECRET WEBSITE",
+  page_title:   "Redirecting…",
+  ticket_title: "Now boarding",
+  headline:     "Hold on, we're getting you there",
+  subtext:      "Don't leave this page yet. In {seconds} seconds we'll take you to {destination} automatically.",
+  unit_text:    "seconds and we land",
+  finish_emoji: "🎁",           /* what the plane is flying to */
+  button_text:  "Let's go",
+  wait_text:    "Landing in progress…",
+  takeoff_text: "Landed! Opening… 🚀",
+  error_text:   "This link is invalid or has expired. Check the link and try again.",
+  /* the funny talk that rides on the plane, in order. Separate each one with | */
+  quips: "Hold on, don't leave this page yet 🙏|We're getting there, I swear 😅|Pilot is sipping zobo, one sec ☕|Dodging Lagos traffic in the sky 🚦|Network no dey vex us today 📶|Plane is full of vibes only ✨|Abeg no close this page 🙏|Checking if your link packed its bags 🧳|Landing gear coming down… 🛬|Landing now! 🛬",
+  step_labels:  "Packing your link|Dodging traffic|Landing",
+  footer_text:  "",
+
+  /* 6. COLOURS */
+  accent_color: "#ff5d73",
+  bg_color:     "#1b1240",
+  card_color:   "#f7f3ff",
+  text_color:   "#1b1240",
+
+  /* 7. RULES */
+  allow_skip: "no",             /* yes = the Board now button works straight away */
+  allow_direct_urls: "yes"      /* yes = go.html?to=https://site.com works. no = only your own links */
+};
+</script>
+<!-- ##################### END OF EDIT SECTION ##################### -->
+<title>Redirecting…</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+:root{--accent:#ff5d73;--bg:#1b1240;--card:#f7f3ff;--text:#1b1240;--sun:#ffb547;--mut:color-mix(in srgb,var(--text) 58%,transparent);--disp:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;--px:calc(100% - 150px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"DM Sans",system-ui,sans-serif;color:#fff;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:linear-gradient(180deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,var(--accent)) 75%,var(--accent) 140%);overflow-x:hidden}
+.sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.sun{position:absolute;left:50%;bottom:-260px;width:620px;height:620px;margin-left:-310px;border-radius:50%;background:radial-gradient(circle,var(--sun) 0,color-mix(in srgb,var(--sun) 40%,transparent) 38%,transparent 68%);opacity:.7;animation:glow 6s ease-in-out infinite alternate}
+@keyframes glow{to{transform:translateY(-26px) scale(1.06);opacity:.9}}
+.cloud{position:absolute;height:90px;width:380px;border-radius:50%;background:rgba(255,255,255,.07);filter:blur(22px);animation:drift 40s linear infinite}
+.cloud:nth-child(3){top:62%;animation-duration:55s;animation-delay:-20s;width:520px}
+.cloud:nth-child(4){top:18%;animation-duration:70s;animation-delay:-45s}
+@keyframes drift{from{transform:translateX(-600px)}to{transform:translateX(120vw)}}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
+@keyframes tw{50%{opacity:.15}}
+
+/* ---- AD BARS: always stuck to the top and bottom of the screen so advertisers are always seen ---- */
+.bar{position:sticky;z-index:20;background:rgba(10,5,35,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:5px 10px 8px}
+header.bar{top:0;border-bottom:1px solid rgba(255,255,255,.14)}
+footer.bar{bottom:0;border-top:1px solid rgba(255,255,255,.14)}
+.adlabel{text-align:center;font-size:10px;letter-spacing:.5px;color:rgba(255,255,255,.5);margin-bottom:4px}
+.ads{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:8px;max-width:1000px;margin:0 auto}
+.ad{height:84px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;text-decoration:none;font-size:12.5px}
+.ad img{width:100%;height:100%;object-fit:cover;display:block}
+.ad iframe{border:0;width:100%;height:100%}
+.ad.txt{padding:8px;flex-direction:column;gap:4px;font-weight:700}
+.ad.txt i{font-style:normal;font-weight:400;opacity:.7;font-size:11px}
+.ad.ph{padding:6px 10px;font-weight:700;line-height:1.25;border:1.5px dashed rgba(255,255,255,.45);background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 30%,transparent),rgba(255,255,255,.08))}
+.foot{text-align:center;color:rgba(255,255,255,.55);font-size:11px;margin-top:5px}
+.foot:empty{display:none}
+
+/* ---- THE COUNTDOWN TICKET (kept small) ---- */
+.stage{flex:1;display:flex;align-items:center;justify-content:center;padding:16px 12px;perspective:1200px}
+.wrap{position:relative;filter:drop-shadow(0 18px 30px rgba(8,4,30,.5));width:100%;max-width:680px;animation:land .9s cubic-bezier(.2,1.2,.3,1) both}
+@keyframes land{from{transform:translateY(-50px) rotate(-2deg);opacity:0}}
+.ticket{display:grid;grid-template-columns:1fr 150px;background:var(--card);color:var(--text);border-radius:20px;transition:transform .15s ease-out,opacity .6s,translate .6s;
+ -webkit-mask:radial-gradient(circle 11px at var(--px) 0,#0000 97%,#000),radial-gradient(circle 11px at var(--px) 100%,#0000 97%,#000);-webkit-mask-composite:source-in;
+ mask:radial-gradient(circle 11px at var(--px) 0,#0000 97%,#000),radial-gradient(circle 11px at var(--px) 100%,#0000 97%,#000);mask-composite:intersect}
+.ticket.gone{translate:0 -40px;opacity:0}
+.main{padding:16px 22px 18px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12px;color:var(--mut);margin-bottom:8px}
+.top b{color:var(--text);font-family:var(--disp);font-size:13px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.top i{font-style:normal;border:1.5px solid var(--mut);border-radius:99px;padding:2px 10px;flex:none;white-space:nowrap}
+.top i:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#ff3b3b;margin-right:6px;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.lane{position:relative;height:104px;margin-bottom:6px}
+.lane:before{content:"";position:absolute;left:0;right:0;bottom:12px;border-top:2.5px dashed color-mix(in srgb,var(--text) 25%,transparent)}
+.lane u{position:absolute;left:0;bottom:12px;height:2.5px;width:0;background:var(--accent);border-radius:2px}
+.plane{position:absolute;left:0;bottom:13px;width:28px;height:28px;color:var(--accent);margin:0 0 -14px -14px}
+.plane svg{width:100%;height:100%;display:block;filter:drop-shadow(0 3px 3px rgba(0,0,0,.2))}
+.say{position:absolute;left:0;bottom:58px;width:max-content;max-width:min(240px,100%);background:var(--text);color:var(--card);font:700 13.5px/1.3 "DM Sans",sans-serif;padding:8px 13px;border-radius:15px 15px 15px 4px}
+.say.pop{animation:pop2 .4s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop2{from{transform:scale(.6);opacity:0}}
+.fin{position:absolute;right:-4px;bottom:-2px;font-size:28px;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px) rotate(8deg)}}
+h1{font-family:var(--disp);font-weight:800;font-size:clamp(20px,3.6vw,26px);line-height:1.1;letter-spacing:-.4px;margin-bottom:6px}
+.sub{color:var(--mut);font-size:13.5px;line-height:1.45;margin-bottom:10px}
+.count{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+#n{font-family:var(--disp);font-weight:800;font-size:clamp(56px,12vw,80px);line-height:.85;letter-spacing:-3px;font-variant-numeric:tabular-nums;color:var(--accent)}
+#n.pop{animation:pop .35s}
+@keyframes pop{40%{transform:scale(1.07)}}
+.u{font-size:13px;color:var(--mut);line-height:1.3}
+.steps{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.steps span{font-size:11.5px;border-radius:99px;padding:4px 10px;background:color-mix(in srgb,var(--text) 8%,transparent);color:var(--mut);transition:.4s}
+.steps span.on{background:var(--text);color:var(--card)}
+.btn{width:100%;border:0;border-radius:12px;padding:12px;font:700 15px "DM Sans",sans-serif;cursor:pointer;color:var(--text);background:linear-gradient(90deg,var(--accent) var(--p,0%),color-mix(in srgb,var(--text) 9%,transparent) var(--p,0%))}
+.btn:not(:disabled){background:var(--accent);color:#fff}
+.btn:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+.stub{border-left:2.5px dashed color-mix(in srgb,var(--text) 22%,transparent);padding:16px 14px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;background:color-mix(in srgb,var(--text) 4%,transparent)}
+.bars{display:flex;align-items:stretch;gap:2px;flex:1;min-height:60px}
+.bars span{background:var(--text);border-radius:1px}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:11px;color:var(--mut)}
+.meta b{display:block;font-family:var(--disp);font-size:19px;color:var(--text)}
+.err{color:#c0183a}
+.cf{position:absolute;left:50%;top:40%;width:9px;height:14px;border-radius:2px;z-index:5;pointer-events:none;animation:cf .95s ease-out forwards}
+@keyframes cf{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+
+/* ---- PHONES: no stub, small ticket, ads stay on screen top and bottom ---- */
+@media(max-width:640px){
+ .ticket{grid-template-columns:1fr;border-radius:18px;-webkit-mask:none;mask:none}
+ .stub{display:none}
+ .stage{padding:10px 10px}
+ .main{padding:14px 15px 16px}
+ .steps{display:none}
+ .lane{height:98px;margin-top:6px}
+ .say{bottom:54px;font-size:12.5px;max-width:100%;padding:7px 12px}
+ .sub{font-size:13px;margin-bottom:8px}
+ .bar{padding:4px 8px 6px}
+ .ads{gap:6px}
+ .ad{height:56px;border-radius:10px;font-size:11px}
+ .ad.ph{font-size:10.5px;padding:4px 6px}
+ .ads.many{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="sky" id="sky"><div class="sun"></div><div class="cloud" style="top:38%"></div><div class="cloud"></div><div class="cloud"></div></div>
+<header class="bar"><div class="adlabel">Sponsored</div><div class="ads" id="adsTop"></div></header>
+<div class="stage"><div class="wrap">
+<article class="ticket" id="ticket">
+ <section class="main">
+  <div class="top"><b id="brand"></b><i id="tt"></i></div>
+  <div class="lane" id="lane"><u id="trail"></u><span class="fin" id="fin"></span><span class="say" id="say"></span><span class="plane" id="plane"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 2.5 2.8 10.2c-.7.3-.6 1.3.1 1.5l5.6 1.7 1.7 5.6c.2.7 1.2.8 1.5.1z"/></svg></span></div>
+  <h1 id="headline"></h1>
+  <p class="sub" id="sub"></p>
+  <div class="count"><span id="n">13</span><span class="u" id="u"></span></div>
+  <div class="steps" id="steps"></div>
+  <button class="btn" id="btn" disabled></button>
+ </section>
+ <aside class="stub"><div class="bars" id="bars"></div><div class="meta"><span>Gate<b id="gate">–</b></span><span>Seat<b id="seat">–</b></span></div></aside>
+</article></div></div>
+<footer class="bar">
+  <div class="adlabel">Sponsored</div>
+  <div class="ads" id="adsBot"></div>
+  <div class="foot" id="foot"></div>
+</footer>
+
+<script>
+/* ╔═════════════════════════════════════════════════════════════╗
+   ║   DO NOT EDIT BELOW THIS LINE  ·  this is the engine         ║
+   ╚═════════════════════════════════════════════════════════════╝ */
+const $ = id => document.getElementById(id);
+const qs = new URLSearchParams(location.search);
+const T0 = Date.now();
+const fill=(S,t,n)=>t.replace(/\{destination\}/gi,n||'what you came for').replace(/\{seconds\}/gi,parseInt(S.countdown_seconds)||13);
+const still = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+function parseCSV(t){const rows=[];let r=[],c='',q=false;for(let i=0;i<t.length;i++){const ch=t[i];
+  if(q){if(ch=='"'){if(t[i+1]=='"'){c+='"';i++}else q=false}else c+=ch}
+  else if(ch=='"')q=true;else if(ch==','){r.push(c);c=''}
+  else if(ch=='\n'){r.push(c);rows.push(r);r=[];c=''}else if(ch!='\r')c+=ch}
+  if(c||r.length){r.push(c);rows.push(r)}return rows}
+
+async function tab(name){
+  if(/PASTE/.test(SHEET_ID))return [];
+  const ctl=new AbortController();const to=setTimeout(()=>ctl.abort(),5000);
+  try{
+    const u=`https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(name)}&_=${Date.now()}`;
+    const r=await fetch(u,{signal:ctl.signal});if(!r.ok)throw 0;
+    return parseCSV(await r.text()).filter(x=>x.some(v=>v.trim()));
+  }catch(e){return []}finally{clearTimeout(to)}
+}
+function safeUrl(u){
+  try{u=u.trim();if(!/^https?:\/\//i.test(u))u="https://"+u;
+    const x=new URL(u);return /^https?:$/.test(x.protocol)?x.href:null}catch(e){return null}
+}
+
+function stars(){const s=$('sky');if(still)return;for(let i=0;i<45;i++){const e=document.createElement('i');e.className='star';
+  e.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*55}%;animation-delay:${Math.random()*3}s;opacity:${.3+Math.random()*.7}`;s.appendChild(e)}}
+
+function applyTheme(S){
+  const r=document.documentElement.style;
+  r.setProperty('--accent',S.accent_color);r.setProperty('--bg',S.bg_color);
+  r.setProperty('--card',S.card_color);r.setProperty('--text',S.text_color);
+  document.title=S.page_title;
+  $('brand').textContent=S.brand_name;$('tt').textContent=S.ticket_title;
+  
+  $('headline').textContent=fill(S,S.headline,'');$('sub').textContent=fill(S,S.subtext,'');$('foot').textContent=S.footer_text;
+  $('u').textContent=S.unit_text;
+}
+
+function adEl(a){
+  const type=(a.type||'image').toLowerCase(),content=a.content||a.image;let el;
+  if(type==='html'){el=document.createElement('div');el.className='ad';
+    const f=document.createElement('iframe');f.setAttribute('sandbox','allow-scripts allow-popups allow-popups-to-escape-sandbox');
+    f.srcdoc=content;el.appendChild(f)}
+  else{el=document.createElement(a.link?'a':'div');el.className='ad'+(type==='text'?' txt':'');
+    if(a.link){const l=safeUrl(a.link);if(l){el.href=l;el.target='_blank';el.rel='noopener sponsored'}}
+    if(type==='text'){const b=document.createElement('span');b.textContent=content;el.appendChild(b);
+      if(a.label){const i=document.createElement('i');i.textContent=a.label;el.appendChild(i)}}
+    else{const im=document.createElement('img');im.src=content;im.alt=a.label||'Ad';im.loading='lazy';el.appendChild(im)}}
+  return el}
+function waLink(S){
+  let n=(S.whatsapp_number||'').replace(/\D/g,'');if(!n)return '';
+  if(n.startsWith('00'))n=n.slice(2);else if(n.startsWith('0'))n=(S.country_code||'234')+n.slice(1);
+  return 'https://wa.me/'+n+'?text='+encodeURIComponent(S.whatsapp_message||'')}
+function adPh(S){
+  const w=waLink(S),el=document.createElement(w?'a':'div');el.className='ad ph';
+  if(w){el.href=w;el.target='_blank';el.rel='noopener'}
+  el.textContent=S.advertise_text;return el}
+function renderAds(S,rows){
+  const h=rows[0]?rows[0].map(x=>x.trim().toLowerCase()):[];
+  const all=rows.slice(1).map(r=>Object.fromEntries(h.map((k,i)=>[k,(r[i]||'').trim()])))
+    .filter(a=>(a.active||'yes').toLowerCase()!=='no'&&(a.content||a.image));
+  const put=(box,pos,slots)=>{
+    box.innerHTML='';
+    const list=all.filter(a=>{const p=(a.position||'footer').toLowerCase();return p===pos||p==='both'});
+    list.forEach(a=>box.appendChild(adEl(a)));
+    for(let i=list.length;i<slots;i++)box.appendChild(adPh(S));
+    const n=Math.max(slots,list.length);box.style.setProperty('--n',n||1);box.classList.toggle('many',n>=4);return n};
+  const n1=put($('adsTop'),'header',parseInt(S.header_ad_slots)||0);
+  const n2=put($('adsBot'),'footer',parseInt(S.footer_ad_slots)||0);
+  if(!n2)document.querySelector('footer.bar').style.display='none';
+  if(!n1)document.querySelector('header.bar').style.display='none';
+}
+
+function stub(dest){ // barcode, gate and seat generated from the destination so each link looks unique
+  let h=0;for(const c of dest)h=(h*31+c.charCodeAt(0))>>>0;
+  const rnd=()=>{h=(h*1664525+1013904223)>>>0;return h/4294967296};
+  const b=$('bars');for(let i=0;i<30;i++){const s=document.createElement('span');s.style.width=(1+Math.floor(rnd()*4))+'px';s.style.flex='none';b.appendChild(s)}
+  $('gate').textContent='G'+(1+Math.floor(rnd()*19));
+  $('seat').textContent=(1+Math.floor(rnd()*34))+'ABCDEF'[Math.floor(rnd()*6)];
+}
+
+function fail(S){
+  $('headline').textContent="Link not found";$('sub').textContent=S.error_text;$('sub').classList.add('err');
+  ['.count','.lane','.steps','.btn'].forEach(q=>document.querySelector(q).style.display='none');
+}
+
+function confetti(){
+  if(still)return;const w=document.querySelector('.wrap');
+  const cols=[getComputedStyle(document.documentElement).getPropertyValue('--accent').trim(),'#ffb547','#7dffb3','#6ec1ff','#ffffff'];
+  for(let i=0;i<36;i++){const e=document.createElement('i');e.className='cf';const a=Math.random()*6.28,d=110+Math.random()*230;
+    e.style.cssText=`--dx:${Math.cos(a)*d}px;--dy:${Math.sin(a)*d-70}px;--r:${Math.random()*720}deg;background:${cols[i%5]}`;w.appendChild(e)}}
+
+function run(S,dest,name){
+  const total=Math.max(1,parseInt(S.countdown_seconds)||13);
+  const end=T0+total*1000;
+  stub(dest);
+  $('headline').textContent=fill(S,S.headline,name);$('sub').textContent=fill(S,S.subtext,name);
+  $('fin').textContent=S.finish_emoji;
+  const quips=fill(S,S.quips,name).split('|').map(x=>x.trim()).filter(Boolean);
+  const labels=S.step_labels.split('|').map(s=>s.trim()).filter(Boolean);
+  labels.forEach(l=>{const s=document.createElement('span');s.textContent=l;$('steps').appendChild(s)});
+  const stepEls=[...$('steps').children];
+  const lane=$('lane'),plane=$('plane'),trail=$('trail'),say=$('say'),btn=$('btn');
+  let leaving=false,lastQ=-1,last=-1;
+  const sayIt=t=>{say.textContent=t;say.classList.remove('pop');void say.offsetWidth;say.classList.add('pop')};
+  const go=()=>{if(leaving)return;leaving=true;sayIt(S.takeoff_text);confetti();$('ticket').classList.add('gone');setTimeout(()=>location.replace(dest),still?0:900)};
+  btn.textContent=S.wait_text;
+  if(S.allow_skip.toLowerCase()==='yes'){btn.disabled=false;btn.textContent=S.button_text}
+  btn.onclick=go;
+  const tick=()=>{
+    const left=Math.max(0,end-Date.now()),f=1-left/(total*1000),sec=Math.ceil(left/1000);
+    if(sec!==last){last=sec;$('n').textContent=sec;$('n').classList.remove('pop');void $('n').offsetWidth;$('n').classList.add('pop')}
+    const w=lane.clientWidth,y=-Math.sin(f*Math.PI)*16,ang=-Math.cos(f*Math.PI)*22+25;
+    plane.style.transform=`translate(${f*w}px,${y}px) rotate(${ang}deg)`;trail.style.width=(f*100)+'%';
+    btn.style.setProperty('--p',(f*100)+'%');
+    if(!leaving&&quips.length){const qi=Math.min(quips.length-1,Math.floor(f*quips.length));if(qi!==lastQ){lastQ=qi;sayIt(quips[qi])}
+      const bw=say.offsetWidth;say.style.left=Math.min(Math.max(f*w-bw/2,0),Math.max(0,w-bw))+'px'}
+    stepEls.forEach((s,i)=>s.classList.toggle('on',f>=i/stepEls.length+.04));
+    if(left<=0){clearInterval(t);btn.disabled=false;btn.textContent=S.button_text;go()}
+  };
+  const t=setInterval(tick,100);tick();
+}
+
+// gentle 3D tilt on desktop
+const tk=$('ticket');
+if(!still&&matchMedia('(hover:hover)').matches)addEventListener('mousemove',e=>{
+  const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
+  tk.style.transform=`rotateY(${x*6}deg) rotateX(${-y*5}deg)`});
+
+(async function(){
+  stars();$('n').textContent=D.countdown_seconds;
+  const [sRows,lRows,aRows]=await Promise.all([tab('Settings'),tab('Links'),tab('Ads')]);
+  const S={...D};
+  sRows.forEach(r=>{const k=(r[0]||'').trim().toLowerCase();if(k&&k!=='key'&&(r[1]||'').trim()!=='')S[k]=r[1].trim()});
+  applyTheme(S);renderAds(S,aRows);
+  let dest=null,name=null;
+  const id=qs.get('id');
+  if(id){const row=lRows.find(r=>(r[0]||'').trim().toLowerCase()===id.trim().toLowerCase());
+    if(row){dest=safeUrl(row[1]||'');name=(row[2]||'').trim()||null}}
+  else if(qs.get('to')&&S.allow_direct_urls.toLowerCase()==='yes'){dest=safeUrl(qs.get('to'));name=(qs.get('name')||'').slice(0,60)||null}
+  else if(S.redirect_link){dest=safeUrl(S.redirect_link);name=(S.redirect_name||'').trim()||null}
+  if(!dest)return fail(S);
+  run(S,dest,name);
+})();
+</script>
+</body>
+</html>
